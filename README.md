@@ -6,4 +6,4 @@
 
 |  |  |
 | --- | --- |
-| [Workshop - TDD em Go](https://talks.raphaelrossi.io/workshop-tdd-go) | 2025.07.30 @ Stone |
+| [Workshop - TDD em Go](https://slides.raphaelrossi.io/workshop-tdd-go) | 2025.07.30 @ Stone |
