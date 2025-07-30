@@ -1,4 +1,4 @@
-# Talks
+# Slides
 
 > Forked from [BaizeAI/talks](https://github.com/BaizeAI/talks)
 

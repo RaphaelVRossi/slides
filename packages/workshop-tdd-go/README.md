@@ -1,4 +1,4 @@
-# Sit Back and Relax with Fault Awareness and Robust Instant Recovery for Large Scale AI Workloads
+# Workshop - TDD em Go
 
 To start the slide show:
 
