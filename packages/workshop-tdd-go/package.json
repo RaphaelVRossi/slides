@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build",
-    "build-base": "slidev build --out ../../dist/workshop-tdd-go --base /talks/workshop-tdd-go/",
+    "build-base": "slidev build --out ../../dist/workshop-tdd-go --base /workshop-tdd-go/",
     "dev": "slidev  --open --remote",
     "export": "slidev export --with-clicks --per-slide --wait-until none"
   },
