@@ -1,4 +1,4 @@
-# Workshop - TDD em Go
+# Dev 2.0 - Futuro com IA
 
 To start the slide show:
 

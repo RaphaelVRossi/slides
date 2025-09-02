@@ -1,10 +1,10 @@
 {
-  "name": "workshop-tdd-go",
+  "name": "dev2.0",
   "type": "module",
   "private": true,
   "scripts": {
     "build": "slidev build",
-    "build-base": "slidev build --out ../../dist/workshop-tdd-go --base /workshop-tdd-go/",
+    "build-base": "slidev build --out ../../dist/dev2.0 --base /dev2.0/",
     "dev": "slidev  --open --remote",
     "export": "slidev export --with-clicks --per-slide --wait-until none"
   },
