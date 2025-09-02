@@ -96,6 +96,49 @@ importers:
         specifier: ^3.5.16
         version: 3.5.16(typescript@5.8.3)
 
+  packages/dev2.0:
+    dependencies:
+      pnpm:
+        specifier: ^10.15.0
+        version: 10.15.0
+    devDependencies:
+      '@iconify-json/bi':
+        specifier: ^1.2.4
+        version: 1.2.4
+      '@iconify-json/carbon':
+        specifier: ^1.2.8
+        version: 1.2.8
+      '@iconify-json/devicon':
+        specifier: ^1.2.24
+        version: 1.2.24
+      '@iconify-json/fluent':
+        specifier: ^1.2.22
+        version: 1.2.22
+      '@iconify-json/icon-park-outline':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/logos':
+        specifier: ^1.2.4
+        version: 1.2.4
+      '@iconify-json/ph':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/ri':
+        specifier: ^1.2.5
+        version: 1.2.5
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.36
+        version: 1.2.36
+      '@iconify-json/svg-spinners':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/twemoji':
+        specifier: ^1.2.2
+        version: 1.2.2
+      playwright-chromium:
+        specifier: ^1.52.0
+        version: 1.52.0
+
   packages/talks: {}
 
   packages/workshop-tdd-go:
@@ -3266,6 +3309,11 @@ packages:
 
   pnpm@10.13.1:
     resolution: {integrity: sha512-N+vxpcejDV+r4MXfRO6NpMllygxa89urKMOhaBtwolYhjQXIHJwNz3Z+9rhVHrW5YAQrntQwDFkkIzY3fgHPrQ==}
+    engines: {node: '>=18.12'}
+    hasBin: true
+
+  pnpm@10.15.0:
+    resolution: {integrity: sha512-SG68JZ0+mZpOhpHOA7XKxKccvso5Nyqbdiy1AM/fCHPiyxar49lRse4s8BJQPwJ7mLZYTk3yJSTgx0UNnseqew==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -7753,6 +7801,8 @@ snapshots:
       yaml: 2.8.0
 
   pnpm@10.13.1: {}
+
+  pnpm@10.15.0: {}
 
   points-on-curve@0.2.0: {}
 
