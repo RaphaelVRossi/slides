@@ -12,7 +12,7 @@ import seedrandom from 'seedrandom'
  * - glowHue: number - Hue shift for the polygons (default: 0)
  * - glowSeed: string | false - Seed for the stable random distribution (default: 'default')
  */
-import { computed, ref, watch } from 'vue'
+import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
 
 const { currentSlideRoute } = useNav()
 
@@ -33,7 +33,7 @@ export type Distribution =
 
 const formatter = computed(() => (currentSlideRoute.value.meta?.slide as any)?.frontmatter || {})
 const distribution = computed(() => (formatter.value.glow || 'full') as Distribution)
-const opacity = computed<number>(() => +(formatter.value.glowOpacity ?? 0.3))
+const opacity = computed<number>(() => +(formatter.value.glowOpacity ?? 0.1))
 const hue = computed<number>(() => +(formatter.value.glowHue || 0))
 const seed = computed<string>(() => (formatter.value.glowSeed === 'false' || formatter.value.glowSeed === false)
   ? Date.now().toString()
@@ -98,10 +98,13 @@ function distance2([x1, y1]: Range, [x2, y2]: Range) {
   return (x2 - x1) ** 2 + (y2 - y1) ** 2
 }
 
+/**
+ * usePloy agora retorna { poly, jumpPoints } para que possamos acionar jumps periódicos
+ */
 function usePloy(number = 16) {
   function getPoints(): Range[] {
     const limits = distributionToLimits(distribution.value)
-    const rng = seedrandom(`${seed.value}-${currentSlideRoute.value.no}`)
+    const rng = seedrandom(`${seed.value}-${Math.random() * 10}`)
     function randomBetween([a, b]: Range) {
       return rng() * (b - a) + a
     }
@@ -133,7 +136,7 @@ function usePloy(number = 16) {
         }
       }
       newPoints.delete(closest)
-      return closest
+      return closest!
     })
   }
 
@@ -141,19 +144,60 @@ function usePloy(number = 16) {
     jumpPoints()
   })
 
-  return poly
+  return { poly, jumpPoints }
 }
 
-const poly1 = usePloy(10)
-const poly2 = usePloy(6)
-const poly3 = usePloy(3)
+const { poly: poly1, jumpPoints: jump1 } = usePloy(10)
+const { poly: poly2, jumpPoints: jump2 } = usePloy(6)
+const { poly: poly3, jumpPoints: jump3 } = usePloy(3)
+
+/**
+ * Timers para "animar" continuamente chamando jumpPoints.
+ * Respeita prefers-reduced-motion.
+ */
+const timers: number[] = []
+
+onMounted(() => {
+ console.log("onmounted")
+  const reduceMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (reduceMotion) return
+
+  // funções utilitárias para criar interval com jitter
+  function startTimer(fn: () => void, baseMs: number, jitter = 0.25) {
+    // chama pela primeira vez com um pequeno delay diferente para cada camada
+    const initialDelay = baseMs * (0.1 + Math.random() * 0.4)
+    const idInit = window.setTimeout(() => {
+      try { fn() } catch (e) { /* no-op */ }
+    }, initialDelay)
+    timers.push(idInit)
+    const ms = baseMs * (1 + (Math.random() * jitter * 2 - jitter))
+    const id = window.setInterval(() => {
+      try { fn() } catch (e) { /* no-op */ }
+    }, ms)
+    timers.push(id)
+  }
+
+  // camadas com tempos diferentes para parecer mais orgânico
+})
+
+setInterval(() => jump1(), 4000) // ~5s
+setInterval(() => jump2(), 5000) // ~7s
+setInterval(() => jump3(), 6000) // ~10s
+
+onBeforeUnmount(() => {
+  for (const t of timers) {
+    clearInterval(t)
+    clearTimeout(t)
+  }
+  timers.length = 0
+})
 </script>
 
 <template>
   <div>
     <div
       class="bg transform-gpu overflow-hidden pointer-events-none"
-      :style="{ filter: `blur(70px) hue-rotate(${hue}deg)` }"
+      :style="{ filter: `blur(60px) hue-rotate(${hue}deg)` }"
       aria-hidden="true"
     >
       <div
@@ -185,7 +229,7 @@ const poly3 = usePloy(3)
 }
 
 .clip {
-  clip-path: circle(75%);
+  clip-path: circle(15%);
   aspect-ratio: 16 / 9;
   position: absolute;
   inset: 0;

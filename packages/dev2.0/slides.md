@@ -12,9 +12,7 @@ mdc: true
 clicks: 0
 preload: false
 routerMode: hash
-glow: 'center'
-glowOpacity: 0.3
-glowSeed: '256'
+glowSeed: 8
 ---
 
 # Dev 2.0
@@ -32,7 +30,7 @@ image: /raphael.jpg
 class: my-cool-content-on-the-left
 backgroundSize: contain
 glow: 'bottom-left'
-glowOpacity: 0.3
+glowOpacity: 0.2
 glowSeed: 8
 ---
 
@@ -52,19 +50,16 @@ Fatec São Bernardo
 transition: fade-out
 layout: two-cols-header
 backgroundSize: contain
-glow: 'left'
-glowSeed: 52
-glowOpacity: 0.3
-glowSeed: 350
+glowSeed: 8
 ---
 
-# Por que IA Agora?
+# Por que IA agora?
 
 ::left::
 
 ## Para o Negócio
 Empresas que adotam IA estão entregando valor mais rápido e com mais qualidade.
-É um diferencial competitivo real para acelerar o nosso *time-to-market*.
+É um diferencial competitivo real para acelerar o *time-to-market*.
 
 ::right::
 
@@ -75,90 +70,88 @@ a criatividade – na resolução de problemas complexos e na inovação.
 ---
 transition: fade-out
 layout: quote
-glow: 'top-left'
-glowSeed: 25
 style: color
-glowOpacity: 0.3
-glowSeed: 250
 ---
 
 # Missão: Liderar pelo Exemplo
 
+Build Learn Measure
 
-Usando a metodologia de Build Learn Measure, é possível criar pequenos códigos
-para entender como a IA funciona, documentando os passos e compartilhar com o
-time, tendo boas trocas para melhorar todo o processo.
+Com ciclos pequenos de iteração com a IA, é possível documentar facilmente
+as etapas, aprendendo melhores formas de se comunicar, compartilhando
+com o time e buscando melhores práticas.
 
 ---
 transition: fade-out
-glow: 'bottom-right'
-glowOpacity: 0.3
-glowSeed: 250
+layout: two-cols-header
+backgroundSize: contain
+glowSeed: 8
 ---
 
 # Aprendizado #1
 
-A IA é muito boa para escrever texto padronizado, ainda mais se passar bons
-contextos.
+Código
+
+::left::
+
+- Contexto é fundamental
+- TDD e SOLID
+- Orientação da lógica com pseudocódigo
+
+::right::
+
+- Revisão cruzada de Código
+- Resumo de contexto
+- Geração de documentação
+
 
 ---
 transition: fade-out
-glow: 'bottom-right'
-glowOpacity: 0.3
-glowSeed: 250
+layout: two-cols-header
+backgroundSize: contain
+glowSeed: 8
 ---
 
 # Aprendizado #2
 
-A IA como um grande copiloto que obedece regras
+Documentação
 
-Usar TDD, principios de boas praticas, exemplo de código e bons contextos
-~novamente~ trás ótimos resultados
+::left::
 
----
-transition: fade-out
-glow: 'bottom-right'
-glowOpacity: 0.3
-glowSeed: 250
----
+- Uso de código
+- Jupyter notebook
 
-# Muito além do dev
+::right::
 
-Impacto em outras áreas
-
-**Para Engenheiros**
-
-Aumento da capacidade criativa e mais tempo para focar em problemas complexos,
-deixando o trabalho repetitivo para o co-piloto de IA.
-
-**Para PMs e Designers**
-
-Ciclos de desenvolvimento e prototipação drasticamente mais rápidos, permitindo
-validar hipóteses e entregar valor mais cedo.
-
-**Para a Liderança**
-
-Aceleração do *time-to-market*, aumento da produtividade e um time mais
-engajado e preparado para o futuro da tecnologia.
+- Migração
+- Comunicação
 
 ---
 transition: fade-out
-glow: 'bottom-right'
-glowOpacity: 0.3
-glowSeed: 250
 ---
 
-# Nem tudo são flores
+# IA sabe de tudo?
 
-E o contexto é sempre rei
+Sim ou não?
 
-A IA não é mágica o suficiente para você pedir "arrume esse bug" e acreditar
-que ela irá conseguir.
+- IA fala não sei?
+- Alucinação?
+- Favores mágicos "arrume esse bug"
 
-Elá só é boa por causa das informações que passamos
+---
+transition: fade-out
+layout: image-right
+image: /engenharia-de-prompt-para-devs.jpg
+class: my-cool-content-on-the-left
+glow: 'left'
+glowOpacity: 0.2
+glowSeed: 304
+backgroundSize: 20em 80%
+---
 
-Depois de entender o problema, ela consegue criar algo para não deixar
-acontecer novamente
+# Referência
+
+_A IA é um copiloto, não um protagonista_
 
 ---
 transition: fade-out
@@ -166,7 +159,7 @@ layout: image-right
 image: /qrcode.png
 class: my-cool-content-on-the-left
 glow: 'left'
-glowOpacity: 0.3
+glowOpacity: 0.2
 glowSeed: 304
 ---
 

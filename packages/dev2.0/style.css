@@ -179,8 +179,10 @@ iframe {
   margin: 0;
 }
 
+
+
 .nota-ia {
-    position: fixed; /* Isso faz com que o rodapé fique fixo na tela */
+  position: fixed; /* Isso faz com que o rodapé fique fixo na tela */
   bottom: 20px;   /* Distância do rodapé para a parte inferior da tela */
   right: 20px;    /* Distância para a lateral direita (ou left, se preferir) */
   font-size: 0.8em; /* Tamanho da fonte menor para não poluir */
