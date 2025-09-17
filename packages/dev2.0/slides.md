@@ -57,13 +57,13 @@ glowSeed: 8
 
 ::left::
 
-## Para o Negócio
-Empresas que adotam IA estão entregando valor mais rápido e com mais qualidade.
+## Para o produto
+Times que adotam IA estão entregando valor mais rápido e com mais qualidade.
 É um diferencial competitivo real para acelerar o *time-to-market*.
 
 ::right::
 
-## Para o Time
+## Para o dev
 A IA nos permite automatizar o trabalho repetitivo e focar nosso maior ativo –
 a criatividade – na resolução de problemas complexos e na inovação.
 
@@ -75,11 +75,9 @@ style: color
 
 # Missão: Liderar pelo Exemplo
 
-Build Learn Measure
+Construir • Medir • Aprender
 
-Com ciclos pequenos de iteração com a IA, é possível documentar facilmente
-as etapas, aprendendo melhores formas de se comunicar, compartilhando
-com o time e buscando melhores práticas.
+Ciclos curtos com IA permitem documentar passos, melhorar prompts e compartilhar padrões com o time.
 
 ---
 transition: fade-out
@@ -137,6 +135,20 @@ Sim ou não?
 - IA fala não sei?
 - Alucinação?
 - Favores mágicos "arrume esse bug"
+- Tenha um teste confiável
+- Mantenha um humano no ciclo
+
+---
+transition: fade-out
+---
+
+# Boas práticas de prompt
+
+Dividir e conquistar
+
+- Seja explícito: objetivo, formato e restrições
+- Forneça contexto mínimo necessário
+- Peça por explicação e passos
 
 ---
 transition: fade-out
