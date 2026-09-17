@@ -21,3 +21,4 @@ Para adicionar uma apresentação, crie um card em `index.html` com o link para 
 | --- | --- |
 | [Workshop - TDD em Go](https://slides.raphaelrossi.io/workshop-tdd-go) | 2025.07.30 @ Stone |
 | [Dev 2.0 - Futuro com IA](https://slides.raphaelrossi.io/dev2.0) | 2025.08.17 @ TDC São Paulo 2025 |
+| [Astra: construindo um chat engine em Go](https://slides.raphaelrossi.io/chat-engine-astra) | [Golang SP & Stone #117](https://www.meetup.com/golangbr/events/316535792) |
