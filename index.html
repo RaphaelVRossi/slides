@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apresentações e workshops de Raphael Rossi sobre Go, testes e inteligência artificial.">
+  <meta name="color-scheme" content="dark">
+  <title>Apresentações | Raphael Rossi</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #edf2fa; background: #0c1220; line-height: 1.6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(ellipse at top right, #183149, transparent 65%); min-height: 100vh; }
+    main, footer { max-width: 1120px; margin: auto; padding: 32px 24px; }
+    header { padding: 48px 0 36px; max-width: 720px; }
+    .eyebrow { color: #70dfcf; font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.1; letter-spacing: -.04em; margin: 16px 0 24px; }
+    header p { color: #b3c0d5; font-size: 1.15rem; }
+    .search { max-width: 480px; }
+    label { display: block; font-weight: 600; margin-bottom: 8px; }
+    input { width: 100%; border: 1px solid #44536c; border-radius: 12px; background: #111c2e; padding: 14px 16px; color: inherit; font: inherit; }
+    input::placeholder { color: #9caec7; }
+    :focus-visible { outline: 3px solid #70dfcf; outline-offset: 4px; }
+    #count, .meta, footer { color: #aab9ce; font-size: .9rem; }
+    #count { margin: 24px 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 20px; }
+    article { display: flex; flex-direction: column; padding: 28px; border: 1px solid #334159; border-top: 3px solid var(--accent, #70dfcf); border-radius: 16px; background: #131e30; }
+    article[hidden], [hidden] { display: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: .75rem; font-weight: 600; color: #d1dcec; background: #24334a; border-radius: 6px; padding: 3px 9px; }
+    h2 { font-size: 1.4rem; line-height: 1.35; margin: 22px 0 12px; }
+    .description { color: #b3c0d5; margin: 0 0 20px; }
+    .meta { margin-top: auto; padding-top: 12px; }
+    .open { display: block; text-align: center; background: #70dfcf; color: #0c2429; text-decoration: none; font-weight: 700; padding: 12px; border-radius: 9px; margin-top: 12px; }
+    .open:hover { background: #a1f2e7; }
+    #empty { padding: 32px 0; color: #b3c0d5; }
+    footer { border-top: 1px solid #334159; margin-top: 48px; }
+    @media (max-width: 600px) { header { padding-top: 16px; } main, footer { padding: 24px 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="eyebrow">Raphael Rossi · Slides</span>
+      <h1>Ideias para compartilhar.</h1>
+      <p>Apresentações e workshops sobre desenvolvimento de software, Go e inteligência artificial. Escolha um tema e explore os slides.</p>
+    </header>
+
+    <div class="search" hidden>
+      <label for="search">Buscar apresentações</label>
+      <input id="search" type="search" placeholder="Título, tema ou evento…" autocomplete="off" aria-controls="presentations">
+    </div>
+    <p id="count" role="status" aria-live="polite">3 apresentações disponíveis</p>
+
+    <section class="grid" id="presentations" aria-label="Apresentações disponíveis">
+      <article>
+        <div class="tags"><span class="tag">Go</span><span class="tag">Arquitetura</span><span class="tag">Chat</span></div>
+        <h2>Astra: construindo um chat engine em Go</h2>
+        <p class="description">Construção de um motor de chat em Go com o projeto Astra.</p>
+        <p class="meta">Golang SP &amp; Stone #117</p>
+        <a class="open" href="./chat-engine-astra/" aria-label="Abrir apresentação Astra: construindo um chat engine em Go">Abrir apresentação <span aria-hidden="true">→</span></a>
+      </article>
+      <article style="--accent: #b9a2ff">
+        <div class="tags"><span class="tag">IA</span><span class="tag">Carreira</span><span class="tag">Desenvolvimento</span></div>
+        <h2>Dev 2.0 — Futuro com IA</h2>
+        <p class="description">O futuro do desenvolvimento de software com inteligência artificial.</p>
+        <p class="meta"><time datetime="2025-08-17">17 ago 2025</time> · TDC São Paulo 2025</p>
+        <a class="open" href="./dev2.0/" aria-label="Abrir apresentação Dev 2.0 — Futuro com IA">Abrir apresentação <span aria-hidden="true">→</span></a>
+      </article>
+      <article style="--accent: #f5c77d">
+        <div class="tags"><span class="tag">Go</span><span class="tag">TDD</span><span class="tag">Workshop</span></div>
+        <h2>Workshop — TDD em Go</h2>
+        <p class="description">Desenvolvimento guiado por testes na prática com a linguagem Go.</p>
+        <p class="meta"><time datetime="2025-07-30">30 jul 2025</time> · Stone</p>
+        <a class="open" href="./workshop-tdd-go/" aria-label="Abrir apresentação Workshop — TDD em Go">Abrir apresentação <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+    <p id="empty" hidden>Nenhuma apresentação encontrada. Tente outro título, tema ou evento.</p>
+  </main>
+  <footer>Raphael Rossi · Apresentações e workshops</footer>
+  <script>
+    const search = document.querySelector('#search');
+    const cards = [...document.querySelectorAll('#presentations article')];
+    const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const update = () => {
+      const query = normalize(search.value.trim());
+      let visible = 0;
+      for (const card of cards) {
+        card.hidden = !normalize(card.textContent).includes(query);
+        if (!card.hidden) visible++;
+      }
+      document.querySelector('#count').textContent = visible === 1
+        ? '1 apresentação disponível'
+        : `${visible} apresentações disponíveis`;
+      document.querySelector('#empty').hidden = visible !== 0;
+    };
+    document.querySelector('.search').hidden = false;
+    search.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

@@ -2,6 +2,19 @@
 
 > Forked from [BaizeAI/talks](https://github.com/BaizeAI/talks)
 
+## Página inicial
+
+A página `index.html` reúne as apresentações e permite buscar por título, tema ou evento.
+
+```sh
+pnpm packages:build-base
+python3 -m http.server 8080 --directory dist
+```
+
+Acesse `http://localhost:8080` para navegar pelas apresentações. O mesmo build já é usado pelo GitHub Pages e inclui a página inicial automaticamente.
+
+Para adicionar uma apresentação, crie um card em `index.html` com o link para o diretório gerado pelo `build-base` do pacote. Para gerar apenas a página inicial, execute `pnpm build:index` (os slides precisam ser compilados separadamente).
+
 ## Presented
 
 |  |  |
