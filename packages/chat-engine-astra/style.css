@@ -4,6 +4,10 @@
 } */
 :root {
   --slidev-code-padding: 8px 10px;
+  --slidev-code-background: #f8fafc !important;
+}
+
+.dark {
   --slidev-code-background: #16161690 !important;
 }
 
@@ -119,7 +123,15 @@ iframe {
 
 .slidev-code {
   backdrop-filter: blur(10px);
-  border: 1px solid #eee1;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 30px #0f172a18;
+  color: #0f172a;
+}
+
+.dark .slidev-code {
+  border-color: #eee1;
+  box-shadow: none;
+  color: inherit;
 }
 
 .rough-annotation > path[stroke-width='2'] {
@@ -198,28 +210,51 @@ iframe {
   box-sizing: border-box;
   min-width: 116px;
   padding: 18px 18px;
-  border: 1px solid #ffffff38;
+  border: 1px solid #94a3b8;
   border-radius: 16px;
-  background: #161616b8;
-  box-shadow: 0 10px 40px #0008, inset 0 1px 0 #fff2;
+  background: #ffffffee;
+  box-shadow: 0 10px 32px #0f172a22, inset 0 1px 0 #fff;
   backdrop-filter: blur(10px);
   text-align: center;
   font-size: 21px;
   line-height: 1.15;
+  color: #0f172a;
 }
 
 .arch-main {
   min-width: 190px;
-  border-color: #00b686aa;
-  background: linear-gradient(135deg, #00b68644, #161616d0);
+  border-color: #008a66;
+  background: linear-gradient(135deg, #d1fae5, #ffffff);
+  color: #064e3b;
+  font-weight: 700;
 }
 
 .arch-arrow {
-  color: #fffc;
+  color: #334155;
   font-size: 36px;
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.95;
   flex: 0 0 auto;
+}
+
+.dark .arch-box,
+.dark .arch-cylinder {
+  border-color: #ffffff38;
+  background: #161616b8;
+  box-shadow: 0 10px 40px #0008, inset 0 1px 0 #fff2;
+  color: inherit;
+}
+
+.dark .arch-main {
+  border-color: #00b686aa;
+  background: linear-gradient(135deg, #00b68644, #161616d0);
+  color: inherit;
+  font-weight: inherit;
+}
+
+.dark .arch-arrow {
+  color: #fffc;
+  opacity: 0.9;
 }
 
 .arch-labeled {
@@ -234,6 +269,11 @@ iframe {
   transform: translateX(-50%);
   white-space: nowrap;
   font-size: 14px;
+  color: #334155;
+  opacity: 0.95;
+}
+
+.dark .arch-labeled span {
   color: #fffb;
   opacity: 0.85;
 }
@@ -249,6 +289,10 @@ iframe {
 .arch-db-line {
   font-size: 38px;
   line-height: 1;
+  color: #334155;
+}
+
+.dark .arch-db-line {
   color: #fffc;
 }
 
@@ -262,6 +306,11 @@ iframe {
 .arch-caption {
   margin-top: 10px;
   font-size: 15px;
+  color: #334155;
+  opacity: 0.9;
+}
+
+.dark .arch-caption {
   color: #fffb;
   opacity: 0.75;
 }
