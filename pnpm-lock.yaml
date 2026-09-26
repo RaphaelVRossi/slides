@@ -134,6 +134,9 @@ importers:
       playwright-chromium:
         specifier: ^1.52.0
         version: 1.52.0
+      slidev-theme-rossi:
+        specifier: workspace:*
+        version: link:../slidev-theme-rossi
 
   packages/dev2.0:
     dependencies:
@@ -177,6 +180,15 @@ importers:
       playwright-chromium:
         specifier: ^1.52.0
         version: 1.52.0
+      slidev-theme-rossi:
+        specifier: workspace:*
+        version: link:../slidev-theme-rossi
+
+  packages/slidev-theme-rossi:
+    dependencies:
+      seedrandom:
+        specifier: ^3.0.5
+        version: 3.0.5
 
   packages/talks: {}
 
@@ -218,6 +230,9 @@ importers:
       playwright-chromium:
         specifier: ^1.52.0
         version: 1.52.0
+      slidev-theme-rossi:
+        specifier: workspace:*
+        version: link:../slidev-theme-rossi
 
 packages:
 

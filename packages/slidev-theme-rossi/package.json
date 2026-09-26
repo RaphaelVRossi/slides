@@ -1,0 +1,33 @@
+{
+  "name": "slidev-theme-rossi",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Tema compartilhado para as apresentações Slidev",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "scripts": {
+    "build": "echo 'theme package, skipping build'",
+    "build-base": "echo 'theme package, skipping build-base'"
+  },
+  "slidev": {
+    "defaults": {
+      "theme": "default",
+      "highlighter": "shiki",
+      "css": "unocss",
+      "transition": "fade-out",
+      "lineNumbers": false,
+      "drawings": {
+        "persist": false
+      },
+      "mdc": true,
+      "preload": false,
+      "routerMode": "hash"
+    }
+  },
+  "dependencies": {
+    "seedrandom": "^3.0.5"
+  }
+}

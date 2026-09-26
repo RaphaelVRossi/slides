@@ -1,4 +1,5 @@
 ---
+theme: rossi
 layout: center
 highlighter: shiki
 css: unocss

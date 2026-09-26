@@ -20,7 +20,8 @@
     "@iconify-json/simple-icons": "^1.2.36",
     "@iconify-json/svg-spinners": "^1.2.2",
     "@iconify-json/twemoji": "^1.2.2",
-    "playwright-chromium": "^1.52.0"
+    "playwright-chromium": "^1.52.0",
+    "slidev-theme-rossi": "workspace:*"
   },
   "dependencies": {
     "pnpm": "^10.15.0"
