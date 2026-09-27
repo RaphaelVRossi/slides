@@ -39,6 +39,22 @@ const seed = computed<string>(() => (formatter.value.glowSeed === 'false' || for
   ? Date.now().toString()
   : formatter.value.glowSeed || 'default',
 )
+
+function glowColor(layer: 1 | 2 | 3, side: 'from' | 'to', fallback: string) {
+  const colors = formatter.value.glowColors?.[layer - 1]
+  const fromColor = Array.isArray(colors) ? colors[0] : undefined
+  const toColor = Array.isArray(colors) ? colors[1] : undefined
+  return formatter.value[`glow${layer}${side === 'from' ? 'From' : 'To'}`]
+    || (side === 'from' ? fromColor : toColor)
+    || fallback
+}
+
+const glow1From = computed(() => glowColor(1, 'from', 'var(--rossi-glow-1-from, #00B686)'))
+const glow1To = computed(() => glowColor(1, 'to', 'var(--rossi-glow-1-to, #008060)'))
+const glow2From = computed(() => glowColor(2, 'from', 'var(--rossi-glow-2-from, #00B686)'))
+const glow2To = computed(() => glowColor(2, 'to', 'var(--rossi-glow-2-to, #1A8790)'))
+const glow3From = computed(() => glowColor(3, 'from', 'var(--rossi-glow-3-from, #00B686)'))
+const glow3To = computed(() => glowColor(3, 'to', 'var(--rossi-glow-3-to, #909090)'))
 const overflow = 0.3
 const disturb = 0.3
 const disturbChance = 0.3
@@ -184,16 +200,16 @@ onBeforeUnmount(() => {
       aria-hidden="true"
     >
       <div
-        class="clip bg-gradient-to-r from-[#00B686] to-[#008060]"
-        :style="{ 'clip-path': `polygon(${poly1})`, 'opacity': opacity }"
+        class="clip"
+        :style="{ 'clip-path': `polygon(${poly1})`, 'opacity': opacity, 'background': `linear-gradient(to right, ${glow1From}, ${glow1To})` }"
       />
       <div
-        class="clip bg-gradient-to-l from-[#00B686] to-[#1A8790]"
-        :style="{ 'clip-path': `polygon(${poly2})`, 'opacity': opacity }"
+        class="clip"
+        :style="{ 'clip-path': `polygon(${poly2})`, 'opacity': opacity, 'background': `linear-gradient(to left, ${glow2From}, ${glow2To})` }"
       />
       <div
-        class="clip bg-gradient-to-t from-[#00B686] to-[#909090]"
-        :style="{ 'clip-path': `polygon(${poly3})`, 'opacity': 0.2 }"
+        class="clip"
+        :style="{ 'clip-path': `polygon(${poly3})`, 'opacity': 0.2, 'background': `linear-gradient(to top, ${glow3From}, ${glow3To})` }"
       />
     </div>
   </div>
