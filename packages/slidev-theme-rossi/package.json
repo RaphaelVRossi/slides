@@ -17,6 +17,11 @@
       "theme": "default",
       "highlighter": "shiki",
       "css": "unocss",
+      "fonts": {
+        "sans": "DM Sans",
+        "mono": "Fira Code",
+        "serif": "Noto Serif SC"
+      },
       "transition": "fade-out",
       "lineNumbers": false,
       "drawings": {

@@ -1,6 +1,6 @@
 // @ts-expect-error - Ignoring the error of missing types for the uno config
 import config from '@slidev/client/uno.config'
-import { mergeConfigs, presetAttributify, presetIcons, presetWebFonts, presetWind3 } from 'unocss'
+import { mergeConfigs, presetAttributify, presetIcons, presetWebFonts, presetWind3, transformerDirectives } from 'unocss'
 
 export default mergeConfigs([
   config,
@@ -11,6 +11,9 @@ export default mergeConfigs([
     safelist: [
       ...Array.from({ length: 30 }, (_, i) => `delay-${(i + 1) * 100}`),
       'animate-pulse',
+    ],
+    transformers: [
+      transformerDirectives(),
     ],
     presets: [
       presetWind3({
