@@ -1,0 +1,123 @@
+.architecture-slide {
+  margin-top: 56px;
+  width: 100%;
+  overflow: visible;
+}
+
+.architecture-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.arch-box,
+.arch-cylinder {
+  box-sizing: border-box;
+  min-width: 116px;
+  padding: 18px;
+  border: 1px solid #94a3b8;
+  border-radius: 16px;
+  background: #ffffffee;
+  box-shadow: 0 10px 32px #0f172a22, inset 0 1px 0 #fff;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  font-size: 21px;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
+.arch-main {
+  min-width: 190px;
+  border-color: #008a66;
+  background: linear-gradient(135deg, #d1fae5, #ffffff);
+  color: #064e3b;
+  font-weight: 700;
+}
+
+.arch-arrow {
+  color: #334155;
+  font-size: 36px;
+  line-height: 1;
+  opacity: 0.95;
+  flex: 0 0 auto;
+}
+
+.dark .arch-box,
+.dark .arch-cylinder {
+  border-color: #ffffff38;
+  background: #161616b8;
+  box-shadow: 0 10px 40px #0008, inset 0 1px 0 #fff2;
+  color: inherit;
+}
+
+.dark .arch-main {
+  border-color: #00b686aa;
+  background: linear-gradient(135deg, #00b68644, #161616d0);
+  color: inherit;
+  font-weight: inherit;
+}
+
+.dark .arch-arrow {
+  color: #fffc;
+  opacity: 0.9;
+}
+
+.arch-labeled {
+  position: relative;
+  margin-inline: 4px;
+}
+
+.arch-labeled span {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 14px;
+  color: #334155;
+  opacity: 0.95;
+}
+
+.dark .arch-labeled span {
+  color: #fffb;
+  opacity: 0.85;
+}
+
+.architecture-db {
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: calc(50% - 120px);
+  width: 240px;
+  text-align: center;
+}
+
+.arch-db-line {
+  font-size: 38px;
+  line-height: 1;
+  color: #334155;
+}
+
+.dark .arch-db-line {
+  color: #fffc;
+}
+
+.arch-cylinder {
+  display: inline-block;
+  min-width: 150px;
+  border-radius: 50% / 18%;
+  padding-block: 18px;
+}
+
+.arch-caption {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #334155;
+  opacity: 0.9;
+}
+
+.dark .arch-caption {
+  color: #fffb;
+  opacity: 0.75;
+}
